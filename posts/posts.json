@@ -1,20 +1,5 @@
 [
   {
-    "path": "posts/2018-10-13-the-sharpe-ratio/",
-    "title": "The Sharpe Ratio",
-    "description": "A short description of the post.",
-    "author": [
-      {
-        "name": "Witek ten Hove",
-        "url": {}
-      }
-    ],
-    "date": "2018-10-13",
-    "categories": [],
-    "preview": {},
-    "last_modified": "2018-10-13T15:08:20+02:00"
-  },
-  {
     "path": "posts/welcome/",
     "title": "Welcome to FTOnderzoekt Big Data",
     "description": "Welcome to our new blog, FTOnderzoekt Big Data. We hope you enjoy \nreading what we have to say!",
@@ -28,5 +13,20 @@
     "categories": [],
     "preview": {},
     "last_modified": "2018-10-13T15:08:43+02:00"
+  },
+  {
+    "path": "posts/2018-10-13-the-sharpe-ratio/",
+    "title": "The Sharpe Ratio",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Witek ten Hove",
+        "url": {}
+      }
+    ],
+    "date": "2018-10-13",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2018-10-13T15:22:48+02:00"
   }
 ]
