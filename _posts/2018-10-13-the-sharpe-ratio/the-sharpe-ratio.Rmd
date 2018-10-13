@@ -1,0 +1,20 @@
+---
+title: "The Sharpe Ratio"
+description: |
+  A short description of the post.
+author:
+  - name: Witek ten Hove
+date: 10-13-2018
+output:
+  radix::radix_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Radix is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Radix at <https://rstudio.github.io/radix>.
+
