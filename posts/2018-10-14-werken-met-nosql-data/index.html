@@ -1288,7 +1288,8 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <div class="d-article">
-<h2 id="waarom-nosql">Waarom NoSQL?</h2>
+<p><em> De datarevolutie wordt niet alleen bepaald door de hoeveelheid data die wordt gegenereerd, maar ook door innovatieve systemen om data op te slaan. Traditionele structuren waar data in tabellen wordt opgeslagen en tabellen via sleutels worden gekoppeld, worden nog steeds gebruikt en hebben hun toepassing. Applicaties die voor web en mobiel worden ontwikkeld hebben echter een structuur nodig die het wegschrijven en opzoeken van data eenvoudiger en sneller maakt. </em></p>
+<h2 id="nosql">NoSQL</h2>
 <p>Als u met Excel werkt of uw data bewaart in MySQL bent u gewend om data op te slaan in rijen en kolommen. Bijvoorbeeld als u klantgegevens opslaat:</p>
 <div class="layout-chunk" data-layout="l-body">
 <table>
@@ -1378,9 +1379,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <h2 id="json">JSON</h2>
 <p>Tot voor kort was XML de standaardmethode om data vast te leggen in een webomgeving. Echter momenteel wordt deze functie steeds meer overgenomen door Javascript Object Notation (JSON).</p>
 <figure>
-<img src="jsonxml.svg" alt="json vs xml" /><figcaption>json vs xml</figcaption>
+<img src='jsonxml.svg' alt='image alt' />
+<figcaption>
+Bron: <a href="https://insights.stackoverflow.com/trends?tags=json%2Cxml" target="_blank">Stack Overflow</a>
+</figcaption>
 </figure>
-<p>De belangrijkste reden is de opkomst van zogenaamde Application Programming Interfaces (APIs). Veel online aanbieders van diensten bieden derden de gelegenheid om toegang te krijgen tot hun data. Zo kan heel makkelijk in één webapplicatie data worden verwerkt van bijvoorbeeld Twitter, een weerdienst en CNN.</p>
+<p>De belangrijkste reden is de opkomst van zogenaamde Application Programming Interfaces (APIs). Veel online aanbieders van diensten bieden derden de gelegenheid om toegang te krijgen tot hun data. De data wordt meestal als JSON verstuurd. Aangezien moderne webapplicaties al in Javascript zijn geschreven kan JSON zonder verdere bewerking gebruikt worden. Zo kan heel makkelijk in één webapplicatie data worden gecombineerd: bijvoorbeeld tweets van <a href="https://developer.twitter.com/en/products/products-overview">Twitter</a>, <a href="https://openweathermap.org/api">weersvoorspellingen</a> en het nieuws via <a href="http://developer.cnn.com/">CNN</a>.</p>
 <p>JSON werkt met zogenaamde key: value sets:</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre><code>
@@ -1415,6 +1419,13 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 <p>De arrays zijn geindexeerd en zo kan ieder element makkelijk worden opgehaald.</p>
 <h2 id="casus-van-xml-naar-json-naar-mongodb">Casus: Van XML naar JSON naar MongoDB</h2>
+<p>In deze casus beschrijven we een organisatie die voor haar webdiensten gebruikt maakt van publieke data. Deze data wordt als XML aangeboden op websites van verschillende overheden. De organisatie wil deze data doorzoekbaar maken voor haar klanten en als API ter beschikking stellen. De workflow betaat uit drie stappen:</p>
+<ol type="1">
+<li>De XML data moet worden omgezet naar JSON</li>
+<li>De JSON data moet worden ingelezen in een NoSQL database</li>
+<li>De data uit de database kan via een API worden geraadpleegd</li>
+</ol>
+<p>De volgende Javascript code toont hoe de eerste twee stappen via <a href="https://nodejs.org/en/">Node.js</a> (server side) kan worden uitgevoerd.</p>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
