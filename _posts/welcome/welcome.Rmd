@@ -1,8 +1,7 @@
 ---
-title: "Welcome to FTOnderzoekt Big Data"
+title: "Welkom bij FTOnderzoekt Big Data"
 description: |
-  Welcome to our new blog, FTOnderzoekt Big Data. We hope you enjoy 
-  reading what we have to say!
+  FTOnderzoekt Big Data verkent de mogelijkheden van Big Data voor het MKB.
 author:
   - name: Nora Jones 
     url: https://example.com/norajones
@@ -14,13 +13,4 @@ output:
     self_contained: false
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-
-# Learn more about creating blogs with Radix at:
-# https://rstudio.github.io/radix/blog.html
-
-```
-
-
-
+De uitkomsten van deze verkenning worden hier gepubliceerd. Al het materiaal is open source en mag worden gebruikt onder voorwaarden van de [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.nl) licentie.
