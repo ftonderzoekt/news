@@ -1,9 +1,16 @@
 ---
-title: "About this blog"
+title: "Auteurs"
 description: |
-  Some additional details about the blog
+  Alle auteurs zijn verbonden aan de Hogeschool van Arnhem en Nijmegen.
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+## Witek ten Hove
+
+
+## Humera Saeed
+
+
+## Jeroen Veen
+
+
+

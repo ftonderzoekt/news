@@ -5,8 +5,10 @@ description: |
 output_dir: "."
 navbar:
   right:
-    - text: "Home"
+    - text: "Start"
       href: index.html
-    - text: "About"
+    - text: "Auteurs"
       href: about.html
+    - icon: fab fa-github
+      href: https://github.com/ftonderzoekt/bigdata
 output: radix::radix_article
