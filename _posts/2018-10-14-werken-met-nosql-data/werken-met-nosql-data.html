@@ -935,9 +935,8 @@
 
 <div class="d-article">
 <h2 id="waarom-nosql">Waarom NoSQL?</h2>
-<p>Als u met Excel werkt of uw data bewaard in MySQL bent u gewend om data op te slaan in rijen en kolommen. Bijvoorbeeld als u klantgegevens opslaat:</p>
+<p>Als u met Excel werkt of uw data bewaart in MySQL bent u gewend om data op te slaan in rijen en kolommen. Bijvoorbeeld als u klantgegevens opslaat:</p>
 <div class="layout-chunk" data-layout="l-body">
-<p>Voornaam Achternaam 1 Witold ten Hove 2 Caroline Tensen</p>
 <table>
 <caption><span id="tab:unnamed-chunk-2">Table 1: </span>Een data-tabel</caption>
 <thead>
@@ -958,7 +957,8 @@
 </tbody>
 </table>
 </div>
-<p>Iedere regel is een klant, iedere kolom een variabele en in iedere cel staat één waarde. Stel echter dat u alle telefoonnumers van uw klanten wilt opslaan en dat sommige klanten meerdere telefoonnummers hebben. Een mogelijkheid is dan om in één cel alle telefoonnummers op te slaan:</p>
+<p>Iedere regel is een klant, iedere kolom een variabele en in iedere cel staat één waarde.</p>
+<p>Stel echter dat u alle telefoonnumers van uw klanten wilt opslaan en dat sommige klanten meerdere telefoonnummers hebben. Een mogelijkheid is dan om in één cel alle telefoonnummers op te slaan:</p>
 <div class="layout-chunk" data-layout="l-body">
 <table>
 <caption><span id="tab:unnamed-chunk-3">Table 2: </span>Een data-tabel met meerdere waarden in één cel</caption>
@@ -985,7 +985,7 @@
 </div>
 <p>Dit kan echter een probleem gaan veroorzaken bij het exporteren of doorzoeken van de data. Zodra uw data asymmetrisch dreigt te worden, is het verstandiger om een NoSQL formaat te overwegen. De belangrijkste formaten qua populariteit zijn XML en JSON.</p>
 <h2 id="xml">XML</h2>
-<p>Door data te annoteren kan aan afzonderlijke data-elementen betekenis worden toegevoegd. Een data-formaat dat hier gebruik van maakt is Extensible Markup Language (XML). Zo kan per klant aan de data die betrekking heeft op de voornaam een tag <voornaam> worden toegevoegd en ieder telefoonnummer apart als zodanig worden gekenmerkt.</p>
+<p>Door data te annoteren kan aan afzonderlijke data-elementen betekenis worden toegevoegd. Een data-formaat dat hier gebruik van maakt, is Extensible Markup Language (XML). Zo kan in ons voorbeeld aan de data die betrekking heeft op de voornaam een tag <voornaam> worden toegevoegd en ieder telefoonnummer apart als zodanig worden gekenmerkt.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre><code>
 &lt;klanten&gt;
@@ -1026,8 +1026,8 @@
 <figure>
 <img src="jsonxml.svg" alt="json vs xml" /><figcaption>json vs xml</figcaption>
 </figure>
-<p>De belangrijkste is de opkomst van zogenaanmde Application Programming Interfaces (APIs). Veel online aanbieders van diensten bieden derden de gelegenheid om toegang te krijgen tot hun data. Zo kan heel makkelijk in één webapplicatie data worden vewerkt van bijvoorbeeld Twitter, een weerdienst en CNN.</p>
-<p>JSON werkt met zogenaamde key:value sets:</p>
+<p>De belangrijkste reden is de opkomst van zogenaamde Application Programming Interfaces (APIs). Veel online aanbieders van diensten bieden derden de gelegenheid om toegang te krijgen tot hun data. Zo kan heel makkelijk in één webapplicatie data worden verwerkt van bijvoorbeeld Twitter, een weerdienst en CNN.</p>
+<p>JSON werkt met zogenaamde key: value sets:</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre><code>
 [
@@ -1060,8 +1060,7 @@
 ] </code></pre>
 </div>
 <p>De arrays zijn geindexeerd en zo kan ieder element makkelijk worden opgehaald.</p>
-<h2 id="van-xml-json">Van XML &gt;&gt; JSON</h2>
-<h2 id="json-opslaan-in-mongodb">JSON opslaan in MongoDB</h2>
+<h2 id="casus-van-xml-naar-json-naar-mongodb">Casus: Van XML naar JSON naar MongoDB</h2>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

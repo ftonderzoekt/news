@@ -23,17 +23,18 @@ library(jsonlite)
 
 
 ## Waarom NoSQL?
-Als u met Excel werkt of uw data bewaard in MySQL bent u gewend om data op te slaan in rijen en kolommen. Bijvoorbeeld als u klantgegevens opslaat:
+Als u met Excel werkt of uw data bewaart in MySQL bent u gewend om data op te slaan in rijen en kolommen. Bijvoorbeeld als u klantgegevens opslaat:
 
 ```{r results='asis'}
 voorVec <- c("Witold", "Caroline")
 achterVec <- c("ten Hove", "Tensen")
 naamDF <- data.frame(Voornaam = voorVec, Achternaam = achterVec, stringsAsFactors = FALSE)
-naamDF
 kable(naamDF, caption = "Een data-tabel")
 ```
 
-Iedere regel is een klant, iedere kolom een variabele en in iedere cel staat één waarde. Stel echter dat u alle telefoonnumers van uw klanten wilt opslaan en dat sommige klanten meerdere telefoonnummers hebben. Een mogelijkheid is dan om in één cel alle telefoonnummers op te slaan:
+Iedere regel is een klant, iedere kolom een variabele en in iedere cel staat één waarde.
+
+Stel echter dat u alle telefoonnumers van uw klanten wilt opslaan en dat sommige klanten meerdere telefoonnummers hebben. Een mogelijkheid is dan om in één cel alle telefoonnummers op te slaan:
 
 
 ```{r results='asis'}
@@ -47,7 +48,7 @@ kable(naamDF, caption = "Een data-tabel met meerdere waarden in één cel")
 Dit kan echter een probleem gaan veroorzaken bij het exporteren of doorzoeken van de data. Zodra uw data asymmetrisch dreigt te worden, is het verstandiger om een NoSQL formaat te overwegen. De belangrijkste formaten qua populariteit zijn XML en JSON.
 
 ## XML
-Door data te annoteren kan aan afzonderlijke data-elementen betekenis worden toegevoegd. Een data-formaat dat hier gebruik van maakt is Extensible Markup Language (XML). Zo kan per klant aan de data die betrekking heeft op de voornaam een tag <voornaam> worden toegevoegd en ieder telefoonnummer apart als zodanig worden gekenmerkt. 
+Door data te annoteren kan aan afzonderlijke data-elementen betekenis worden toegevoegd. Een data-formaat dat hier gebruik van maakt, is Extensible Markup Language (XML). Zo kan in ons voorbeeld aan de data die betrekking heeft op de voornaam een tag <voornaam> worden toegevoegd en ieder telefoonnummer apart als zodanig worden gekenmerkt. 
 
 ```{r}
 data<- naamDF
@@ -104,9 +105,9 @@ Tot voor kort was XML de standaardmethode om data vast te leggen in een webomgev
 
 ![json vs xml](jsonxml.svg)
 
-De belangrijkste is de opkomst van zogenaanmde Application Programming Interfaces (APIs). Veel online aanbieders van diensten bieden derden de gelegenheid om toegang te krijgen tot hun data. Zo kan heel makkelijk in één webapplicatie data worden vewerkt van bijvoorbeeld Twitter, een weerdienst en CNN.
+De belangrijkste reden is de opkomst van zogenaamde Application Programming Interfaces (APIs). Veel online aanbieders van diensten bieden derden de gelegenheid om toegang te krijgen tot hun data. Zo kan heel makkelijk in één webapplicatie data worden verwerkt van bijvoorbeeld Twitter, een weerdienst en CNN.
 
-JSON werkt met zogenaamde key:value sets:
+JSON werkt met zogenaamde key: value sets:
 
 ```{r}
 voorList <- list(c("Witold"), c("Caroline"))
@@ -130,6 +131,5 @@ klantJSON
 
 De arrays zijn geindexeerd en zo kan ieder element makkelijk worden opgehaald.
 
-## Van XML >> JSON
+## Casus: Van XML naar JSON naar MongoDB
 
-## JSON opslaan in MongoDB
