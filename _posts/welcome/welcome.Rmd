@@ -8,6 +8,7 @@ author:
     affiliation: Spacely Sprockets
     affiliation_url: https://example.com/spacelysprokets
 date: 2018-10-13
+creative_commons: CC BY
 output:
   radix::radix_article:
     self_contained: false

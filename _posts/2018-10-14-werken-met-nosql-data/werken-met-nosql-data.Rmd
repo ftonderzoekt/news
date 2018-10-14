@@ -6,6 +6,8 @@ author:
   - name: Witek ten Hove
     url: {}
 date: 2018-10-14
+preview: jsonxml.svg
+creative_commons: CC BY
 output:
   radix::radix_article:
     self_contained: false
