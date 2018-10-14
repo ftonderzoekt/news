@@ -7,7 +7,7 @@ author:
     url: https://example.com/norajones
     affiliation: Spacely Sprockets
     affiliation_url: https://example.com/spacelysprokets
-date: 10-13-2018
+date: 2018-10-13
 output:
   radix::radix_article:
     self_contained: false

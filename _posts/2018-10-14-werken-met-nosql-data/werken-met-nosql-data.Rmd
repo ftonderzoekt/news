@@ -5,7 +5,7 @@ description: |
 author:
   - name: Witek ten Hove
     url: {}
-date: 10-14-2018
+date: 2018-10-14
 output:
   radix::radix_article:
     self_contained: false
