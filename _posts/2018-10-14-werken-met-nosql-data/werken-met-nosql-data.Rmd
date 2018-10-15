@@ -21,8 +21,10 @@ library(XML)
 library(jsonlite)
 ```
 <em>
-De datarevolutie wordt niet alleen bepaald door de hoeveelheid data die wordt gegenereerd, maar ook door innovatieve systemen om data op te slaan. Traditionele structuren waar data in tabellen wordt opgeslagen en tabellen via sleutels worden gekoppeld, worden nog steeds gebruikt en hebben hun toepassing. Applicaties die voor web en mobiel worden ontwikkeld hebben echter een structuur nodig die het wegschrijven en opzoeken van data eenvoudiger en sneller maakt.
+De datarevolutie wordt niet alleen bepaald door de hoeveelheid data die wordt gegenereerd, maar ook door innovatieve systemen om data op te slaan. Traditionele structuren waar data in tabellen wordt opgeslagen worden nog steeds gebruikt en hebben hun toepassing. Applicaties die voor web en mobiel worden ontwikkeld hebben echter een structuur nodig die het wegschrijven en opzoeken van data eenvoudiger en sneller maakt.
 </em>
+
+In dit artikel beschrijf ik waarom voor asymmetrische datastructuren (NoSQL) gekozen wordt. Daarna bespreek ik de twee meest gebruikte standaarden: XML en JSON. Het artikel eindigt met een illustratie van een workflow waarbij XML data wordt omgezet naar JSON en de data uiteindelijk wordt bewaard in MongoDB.
 
 ## NoSQL
 Als u met Excel werkt of uw data bewaart in MySQL bent u gewend om data op te slaan in rijen en kolommen. Bijvoorbeeld als u klantgegevens opslaat:
@@ -76,7 +78,7 @@ cat(saveXML(xml, prefix = ''))
 
 Via deze methode kan makkelijk data worden toegevoegd, bijvoorbeeld een tweede voornaam:
 
-```{r}
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
 data[1,1] <- "Witold; Frederik"
 data[2,1] <- "Caroline; Egbertine"
 
@@ -99,8 +101,6 @@ xml$closeTag()
 cat(saveXML(xml, prefix = ''))
 ```
 
-
-
 ## JSON
 
 Tot voor kort was XML de standaardmethode om data vast te leggen in een webomgeving. Echter momenteel wordt deze functie steeds meer overgenomen door Javascript Object Notation (JSON).
@@ -114,7 +114,7 @@ De belangrijkste reden is de opkomst van zogenaamde Application Programming Inte
 
 JSON werkt met zogenaamde key: value sets:
 
-```{r}
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
 voorList <- list(c("Witold"), c("Caroline"))
 achterList <- list(c("ten Hove"), c("Tefsen"))
 telList <- list(c("06111111"), c("06333333"))
@@ -122,6 +122,7 @@ klantDF <- tibble(Voornaam = voorList, Achternaam = achterList, Telefoon = telLi
 klantJSON = toJSON(klantDF, pretty = TRUE, auto_unbox = TRUE)
 klantJSON
 ```
+
 
 Als een waarde (value) uit meerdere elementen bestaat, worden ze in een zogenaamde arrays opgeslagen.
 
@@ -144,5 +145,107 @@ In deze casus beschrijven we een organisatie die voor haar webdiensten gebruikt 
 2. De JSON data moet worden ingelezen in een NoSQL database
 3. De data uit de database kan via een API worden geraadpleegd
 
-De volgende Javascript code toont hoe de eerste twee stappen via [Node.js](https://nodejs.org/en/) (server side) kan worden uitgevoerd.
+De volgende Javascript code toont hoe de eerste twee stappen via [Node.js](https://nodejs.org/en/) (server side) kan worden uitgevoerd. Voor de laatste stap zal in een apart artikel worden toegelicht.
 
+### XML naar JSON
+
+<figure>
+  <figcaption>klanten.xml</figcaption>
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+
+<klanten>
+  <klant>
+    <Voornaam>Witold</Voornaam>
+    <Voornaam>Frederik</Voornaam>
+    <Achternaam>ten Hove</Achternaam>
+    <Telefooonummer>06111111</Telefooonummer>
+    <Telefooonummer>06222222</Telefooonummer>
+  </klant>
+  <klant>
+    <Voornaam>Caroline</Voornaam>
+    <Voornaam>Egbertine</Voornaam>
+    <Achternaam>Tensen</Achternaam>
+    <Telefooonummer>06333333</Telefooonummer>
+  </klant>
+</klanten>
+```
+</figure>
+
+<figure>
+  <figcaption>xml2json.js</figcaption>
+</pre>
+
+<pre class="prettyprint">
+    var fs = require('fs');
+    var convert = require('xml-js');
+    var xml = require('fs').readFileSync('klanten.xml', 'utf8');
+    var options = {
+                    compact: true,
+                    ignoreAtrributes: true,
+                    ignoreDeclaration: true
+                  };
+    var result = convert.xml2js(xml, options);
+    var klanten = JSON.stringify(result, null, 2);
+    
+    console.log(JSON.stringify(result, null, 2));
+    
+    fs.writeFile('klanten.json', klanten, 'utf8', function(err){
+            if(err){
+                  console.log(err);
+            } else {
+                  console.log('Everything went OK!');
+            }
+    });
+</pre>
+</figure>
+
+<figure>
+  <figcaption>klanten.json</figcaption>
+```json
+    {
+      "klanten": {
+        "klant": [
+          {
+            "Voornaam": [
+              {
+                "_text": "Witold"
+              },
+              {
+                "_text": "Frederik"
+              }
+            ],
+            "Achternaam": {
+              "_text": "ten Hove"
+            },
+            "Telefooonummer": [
+              {
+                "_text": "06111111"
+              },
+              {
+                "_text": "06222222"
+              }
+            ]
+          },
+          {
+            "Voornaam": [
+              {
+                "_text": "Caroline"
+              },
+              {
+                "_text": "Egbertine"
+              }
+            ],
+            "Achternaam": {
+              "_text": "Tensen"
+            },
+            "Telefooonummer": {
+              "_text": "06333333"
+            }
+          }
+        ]
+      }
+    }
+
+```
+</figure>

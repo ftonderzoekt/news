@@ -1,5 +1,5 @@
 name: "news"
-title: "FTOnderzoekt Big Data"
+title: "FT_Onderzoekt >> Big Data"
 description: |
   FTOnderzoekt Big Data
 output_dir: "."
@@ -11,4 +11,8 @@ navbar:
       href: about.html
     - icon: fab fa-github
       href: https://github.com/ftonderzoekt/bigdata
-output: radix::radix_article
+output: 
+   radix::radix_article:
+     includes:
+        in_header: header.html
+     css: styles.css

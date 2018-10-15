@@ -934,7 +934,8 @@
 </div>
 
 <div class="d-article">
-<p><em> De datarevolutie wordt niet alleen bepaald door de hoeveelheid data die wordt gegenereerd, maar ook door innovatieve systemen om data op te slaan. Traditionele structuren waar data in tabellen wordt opgeslagen en tabellen via sleutels worden gekoppeld, worden nog steeds gebruikt en hebben hun toepassing. Applicaties die voor web en mobiel worden ontwikkeld hebben echter een structuur nodig die het wegschrijven en opzoeken van data eenvoudiger en sneller maakt. </em></p>
+<p><em> De datarevolutie wordt niet alleen bepaald door de hoeveelheid data die wordt gegenereerd, maar ook door innovatieve systemen om data op te slaan. Traditionele structuren waar data in tabellen wordt opgeslagen worden nog steeds gebruikt en hebben hun toepassing. Applicaties die voor web en mobiel worden ontwikkeld hebben echter een structuur nodig die het wegschrijven en opzoeken van data eenvoudiger en sneller maakt. </em></p>
+<p>In dit artikel beschrijf ik waarom voor asymmetrische datastructuren (NoSQL) gekozen wordt. Daarna bespreek ik de twee meest gebruikte standaarden: XML en JSON. Het artikel eindigt met een illustratie van een workflow waarbij XML data wordt omgezet naar JSON en de data uiteindelijk wordt bewaard in MongoDB.</p>
 <h2 id="nosql">NoSQL</h2>
 <p>Als u met Excel werkt of uw data bewaart in MySQL bent u gewend om data op te slaan in rijen en kolommen. Bijvoorbeeld als u klantgegevens opslaat:</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -1071,7 +1072,109 @@ Bron: <a href="https://insights.stackoverflow.com/trends?tags=json%2Cxml" target
 <li>De JSON data moet worden ingelezen in een NoSQL database</li>
 <li>De data uit de database kan via een API worden geraadpleegd</li>
 </ol>
-<p>De volgende Javascript code toont hoe de eerste twee stappen via <a href="https://nodejs.org/en/">Node.js</a> (server side) kan worden uitgevoerd.</p>
+<p>De volgende Javascript code toont hoe de eerste twee stappen via <a href="https://nodejs.org/en/">Node.js</a> (server side) kan worden uitgevoerd. Voor de laatste stap zal in een apart artikel worden toegelicht.</p>
+<h3 id="xml-naar-json">XML naar JSON</h3>
+<figure>
+<figcaption>
+klanten.xml
+</figcaption>
+<pre class="xml"><code>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+
+&lt;klanten&gt;
+  &lt;klant&gt;
+    &lt;Voornaam&gt;Witold&lt;/Voornaam&gt;
+    &lt;Voornaam&gt;Frederik&lt;/Voornaam&gt;
+    &lt;Achternaam&gt;ten Hove&lt;/Achternaam&gt;
+    &lt;Telefooonummer&gt;06111111&lt;/Telefooonummer&gt;
+    &lt;Telefooonummer&gt;06222222&lt;/Telefooonummer&gt;
+  &lt;/klant&gt;
+  &lt;klant&gt;
+    &lt;Voornaam&gt;Caroline&lt;/Voornaam&gt;
+    &lt;Voornaam&gt;Egbertine&lt;/Voornaam&gt;
+    &lt;Achternaam&gt;Tensen&lt;/Achternaam&gt;
+    &lt;Telefooonummer&gt;06333333&lt;/Telefooonummer&gt;
+  &lt;/klant&gt;
+&lt;/klanten&gt;</code></pre>
+</figure>
+<figure>
+<figcaption>
+xml2json.js
+</figcaption>
+</pre>
+<pre class="prettyprint">
+    var fs = require('fs');
+    var convert = require('xml-js');
+    var xml = require('fs').readFileSync('klanten.xml', 'utf8');
+    var options = {
+                    compact: true,
+                    ignoreAtrributes: true,
+                    ignoreDeclaration: true
+                  };
+    var result = convert.xml2js(xml, options);
+    var klanten = JSON.stringify(result, null, 2);
+    
+    console.log(JSON.stringify(result, null, 2));
+    
+    fs.writeFile('klanten.json', klanten, 'utf8', function(err){
+            if(err){
+                  console.log(err);
+            } else {
+                  console.log('Everything went OK!');
+            }
+    });
+</pre>
+</figure>
+<figure>
+<figcaption>
+klanten.json
+</figcaption>
+<pre class="json"><code>
+    {
+      &quot;klanten&quot;: {
+        &quot;klant&quot;: [
+          {
+            &quot;Voornaam&quot;: [
+              {
+                &quot;_text&quot;: &quot;Witold&quot;
+              },
+              {
+                &quot;_text&quot;: &quot;Frederik&quot;
+              }
+            ],
+            &quot;Achternaam&quot;: {
+              &quot;_text&quot;: &quot;ten Hove&quot;
+            },
+            &quot;Telefooonummer&quot;: [
+              {
+                &quot;_text&quot;: &quot;06111111&quot;
+              },
+              {
+                &quot;_text&quot;: &quot;06222222&quot;
+              }
+            ]
+          },
+          {
+            &quot;Voornaam&quot;: [
+              {
+                &quot;_text&quot;: &quot;Caroline&quot;
+              },
+              {
+                &quot;_text&quot;: &quot;Egbertine&quot;
+              }
+            ],
+            &quot;Achternaam&quot;: {
+              &quot;_text&quot;: &quot;Tensen&quot;
+            },
+            &quot;Telefooonummer&quot;: {
+              &quot;_text&quot;: &quot;06333333&quot;
+            }
+          }
+        ]
+      }
+    }
+</code></pre>
+</figure>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
