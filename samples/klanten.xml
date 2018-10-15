@@ -5,13 +5,13 @@
     <Voornaam>Witold</Voornaam>
     <Voornaam>Frederik</Voornaam>
     <Achternaam>ten Hove</Achternaam>
-    <Telefooonummer>06111111</Telefooonummer>
-    <Telefooonummer>06222222</Telefooonummer>
+    <Telefoon>06111111</Telefoon>
+    <Telefoon>06222222</Telefoon>
   </klant>
   <klant>
     <Voornaam>Caroline</Voornaam>
     <Voornaam>Egbertine</Voornaam>
     <Achternaam>Tensen</Achternaam>
-    <Telefooonummer>06333333</Telefooonummer>
+    <Telefoon>06333333</Telefoon>
   </klant>
 </klanten>

@@ -45,7 +45,7 @@ Stel echter dat u alle telefoonnumers van uw klanten wilt opslaan en dat sommige
 voorVec <- c("Witek", "Caroline")
 achterVec <- c("ten Hove", "Tensen")
 telVec <- c("06111111; 06222222", "06333333")
-naamDF <- data.frame(Voornaam = voorVec, Achternaam = achterVec, Telefooonummer = telVec, stringsAsFactors = FALSE)
+naamDF <- data.frame(Voornaam = voorVec, Achternaam = achterVec, Telefoon = telVec, stringsAsFactors = FALSE)
 kable(naamDF, caption = "Een data-tabel met meerdere waarden in één cel")
 ```
 
@@ -152,23 +152,23 @@ De volgende Javascript code toont hoe de eerste twee stappen via [Node.js](https
 <figure>
   <figcaption>klanten.xml</figcaption>
 ```xml
-<?xml version="1.0" encoding="utf-8"?>
-
-<klanten>
-  <klant>
-    <Voornaam>Witold</Voornaam>
-    <Voornaam>Frederik</Voornaam>
-    <Achternaam>ten Hove</Achternaam>
-    <Telefooonummer>06111111</Telefooonummer>
-    <Telefooonummer>06222222</Telefooonummer>
-  </klant>
-  <klant>
-    <Voornaam>Caroline</Voornaam>
-    <Voornaam>Egbertine</Voornaam>
-    <Achternaam>Tensen</Achternaam>
-    <Telefooonummer>06333333</Telefooonummer>
-  </klant>
-</klanten>
+    <?xml version="1.0" encoding="utf-8"?>
+    
+    <klanten>
+      <klant>
+        <Voornaam>Witold</Voornaam>
+        <Voornaam>Frederik</Voornaam>
+        <Achternaam>ten Hove</Achternaam>
+        <Telefoon>06111111</Telefoon>
+        <Telefoon>06222222</Telefoon>
+      </klant>
+      <klant>
+        <Voornaam>Caroline</Voornaam>
+        <Voornaam>Egbertine</Voornaam>
+        <Achternaam>Tensen</Achternaam>
+        <Telefoon>06333333</Telefoon>
+      </klant>
+    </klanten>
 ```
 </figure>
 
@@ -203,49 +203,48 @@ De volgende Javascript code toont hoe de eerste twee stappen via [Node.js](https
 <figure>
   <figcaption>klanten.json</figcaption>
 ```json
-    {
-      "klanten": {
-        "klant": [
-          {
-            "Voornaam": [
-              {
-                "_text": "Witold"
-              },
-              {
-                "_text": "Frederik"
-              }
-            ],
-            "Achternaam": {
-              "_text": "ten Hove"
+  {
+    "klanten": {
+      "klant": [
+        {
+          "Voornaam": [
+            {
+              "_text": "Witold"
             },
-            "Telefooonummer": [
-              {
-                "_text": "06111111"
-              },
-              {
-                "_text": "06222222"
-              }
-            ]
-          },
-          {
-            "Voornaam": [
-              {
-                "_text": "Caroline"
-              },
-              {
-                "_text": "Egbertine"
-              }
-            ],
-            "Achternaam": {
-              "_text": "Tensen"
-            },
-            "Telefooonummer": {
-              "_text": "06333333"
+            {
+              "_text": "Frederik"
             }
+          ],
+          "Achternaam": {
+            "_text": "ten Hove"
+          },
+          "Telefoon": [
+            {
+              "_text": "06111111"
+            },
+            {
+              "_text": "06222222"
+            }
+          ]
+        },
+        {
+          "Voornaam": [
+            {
+              "_text": "Caroline"
+            },
+            {
+              "_text": "Egbertine"
+            }
+          ],
+          "Achternaam": {
+            "_text": "Tensen"
+          },
+          "Telefoon": {
+            "_text": "06333333"
           }
-        ]
-      }
+        }
+      ]
     }
-
+  }
 ```
 </figure>

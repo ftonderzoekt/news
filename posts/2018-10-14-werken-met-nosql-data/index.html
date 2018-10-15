@@ -1358,7 +1358,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <tr class="header">
 <th style="text-align: left;">Voornaam</th>
 <th style="text-align: left;">Achternaam</th>
-<th style="text-align: left;">Telefooonummer</th>
+<th style="text-align: left;">Telefoon</th>
 </tr>
 </thead>
 <tbody>
@@ -1384,13 +1384,13 @@ document.addEventListener('DOMContentLoaded', function() {
   &lt;klant&gt;
     &lt;Voornaam&gt;Witek&lt;/Voornaam&gt;
     &lt;Achternaam&gt;ten Hove&lt;/Achternaam&gt;
-    &lt;Telefooonummer&gt;06111111&lt;/Telefooonummer&gt;
-    &lt;Telefooonummer&gt;06222222&lt;/Telefooonummer&gt;
+    &lt;Telefoon&gt;06111111&lt;/Telefoon&gt;
+    &lt;Telefoon&gt;06222222&lt;/Telefoon&gt;
   &lt;/klant&gt;
   &lt;klant&gt;
     &lt;Voornaam&gt;Caroline&lt;/Voornaam&gt;
     &lt;Achternaam&gt;Tensen&lt;/Achternaam&gt;
-    &lt;Telefooonummer&gt;06333333&lt;/Telefooonummer&gt;
+    &lt;Telefoon&gt;06333333&lt;/Telefoon&gt;
   &lt;/klant&gt;
 &lt;/klanten&gt;</code></pre>
 </div>
@@ -1402,14 +1402,14 @@ document.addEventListener('DOMContentLoaded', function() {
     &lt;Voornaam&gt;Witold&lt;/Voornaam&gt;
     &lt;Voornaam&gt;Frederik&lt;/Voornaam&gt;
     &lt;Achternaam&gt;ten Hove&lt;/Achternaam&gt;
-    &lt;Telefooonummer&gt;06111111&lt;/Telefooonummer&gt;
-    &lt;Telefooonummer&gt;06222222&lt;/Telefooonummer&gt;
+    &lt;Telefoon&gt;06111111&lt;/Telefoon&gt;
+    &lt;Telefoon&gt;06222222&lt;/Telefoon&gt;
   &lt;/klant&gt;
   &lt;klant&gt;
     &lt;Voornaam&gt;Caroline&lt;/Voornaam&gt;
     &lt;Voornaam&gt;Egbertine&lt;/Voornaam&gt;
     &lt;Achternaam&gt;Tensen&lt;/Achternaam&gt;
-    &lt;Telefooonummer&gt;06333333&lt;/Telefooonummer&gt;
+    &lt;Telefoon&gt;06333333&lt;/Telefoon&gt;
   &lt;/klant&gt;
 &lt;/klanten&gt;</code></pre>
 </div>
@@ -1469,23 +1469,23 @@ Bron: <a href="https://insights.stackoverflow.com/trends?tags=json%2Cxml" target
 klanten.xml
 </figcaption>
 <pre class="xml"><code>
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-
-&lt;klanten&gt;
-  &lt;klant&gt;
-    &lt;Voornaam&gt;Witold&lt;/Voornaam&gt;
-    &lt;Voornaam&gt;Frederik&lt;/Voornaam&gt;
-    &lt;Achternaam&gt;ten Hove&lt;/Achternaam&gt;
-    &lt;Telefooonummer&gt;06111111&lt;/Telefooonummer&gt;
-    &lt;Telefooonummer&gt;06222222&lt;/Telefooonummer&gt;
-  &lt;/klant&gt;
-  &lt;klant&gt;
-    &lt;Voornaam&gt;Caroline&lt;/Voornaam&gt;
-    &lt;Voornaam&gt;Egbertine&lt;/Voornaam&gt;
-    &lt;Achternaam&gt;Tensen&lt;/Achternaam&gt;
-    &lt;Telefooonummer&gt;06333333&lt;/Telefooonummer&gt;
-  &lt;/klant&gt;
-&lt;/klanten&gt;</code></pre>
+    &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+    
+    &lt;klanten&gt;
+      &lt;klant&gt;
+        &lt;Voornaam&gt;Witold&lt;/Voornaam&gt;
+        &lt;Voornaam&gt;Frederik&lt;/Voornaam&gt;
+        &lt;Achternaam&gt;ten Hove&lt;/Achternaam&gt;
+        &lt;Telefoon&gt;06111111&lt;/Telefoon&gt;
+        &lt;Telefoon&gt;06222222&lt;/Telefoon&gt;
+      &lt;/klant&gt;
+      &lt;klant&gt;
+        &lt;Voornaam&gt;Caroline&lt;/Voornaam&gt;
+        &lt;Voornaam&gt;Egbertine&lt;/Voornaam&gt;
+        &lt;Achternaam&gt;Tensen&lt;/Achternaam&gt;
+        &lt;Telefoon&gt;06333333&lt;/Telefoon&gt;
+      &lt;/klant&gt;
+    &lt;/klanten&gt;</code></pre>
 </figure>
 <figure>
 <figcaption>
@@ -1520,50 +1520,49 @@ xml2json.js
 klanten.json
 </figcaption>
 <pre class="json"><code>
-    {
-      &quot;klanten&quot;: {
-        &quot;klant&quot;: [
-          {
-            &quot;Voornaam&quot;: [
-              {
-                &quot;_text&quot;: &quot;Witold&quot;
-              },
-              {
-                &quot;_text&quot;: &quot;Frederik&quot;
-              }
-            ],
-            &quot;Achternaam&quot;: {
-              &quot;_text&quot;: &quot;ten Hove&quot;
+  {
+    &quot;klanten&quot;: {
+      &quot;klant&quot;: [
+        {
+          &quot;Voornaam&quot;: [
+            {
+              &quot;_text&quot;: &quot;Witold&quot;
             },
-            &quot;Telefooonummer&quot;: [
-              {
-                &quot;_text&quot;: &quot;06111111&quot;
-              },
-              {
-                &quot;_text&quot;: &quot;06222222&quot;
-              }
-            ]
-          },
-          {
-            &quot;Voornaam&quot;: [
-              {
-                &quot;_text&quot;: &quot;Caroline&quot;
-              },
-              {
-                &quot;_text&quot;: &quot;Egbertine&quot;
-              }
-            ],
-            &quot;Achternaam&quot;: {
-              &quot;_text&quot;: &quot;Tensen&quot;
-            },
-            &quot;Telefooonummer&quot;: {
-              &quot;_text&quot;: &quot;06333333&quot;
+            {
+              &quot;_text&quot;: &quot;Frederik&quot;
             }
+          ],
+          &quot;Achternaam&quot;: {
+            &quot;_text&quot;: &quot;ten Hove&quot;
+          },
+          &quot;Telefoon&quot;: [
+            {
+              &quot;_text&quot;: &quot;06111111&quot;
+            },
+            {
+              &quot;_text&quot;: &quot;06222222&quot;
+            }
+          ]
+        },
+        {
+          &quot;Voornaam&quot;: [
+            {
+              &quot;_text&quot;: &quot;Caroline&quot;
+            },
+            {
+              &quot;_text&quot;: &quot;Egbertine&quot;
+            }
+          ],
+          &quot;Achternaam&quot;: {
+            &quot;_text&quot;: &quot;Tensen&quot;
+          },
+          &quot;Telefoon&quot;: {
+            &quot;_text&quot;: &quot;06333333&quot;
           }
-        ]
-      }
+        }
+      ]
     }
-</code></pre>
+  }</code></pre>
 </figure>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

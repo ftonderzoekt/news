@@ -13,7 +13,7 @@
         "Achternaam": {
           "_text": "ten Hove"
         },
-        "Telefooonummer": [
+        "Telefoon": [
           {
             "_text": "06111111"
           },
@@ -34,7 +34,7 @@
         "Achternaam": {
           "_text": "Tensen"
         },
-        "Telefooonummer": {
+        "Telefoon": {
           "_text": "06333333"
         }
       }
