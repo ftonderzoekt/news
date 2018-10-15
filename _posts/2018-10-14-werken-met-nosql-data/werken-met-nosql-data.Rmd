@@ -150,25 +150,40 @@ De volgende Javascript code toont hoe de eerste twee stappen via [Node.js](https
 ### XML naar JSON
 
 <figure>
-  <figcaption>klanten.xml</figcaption>
+  <figcaption>kavels.xml</figcaption>
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
     
-    <klanten>
-      <klant>
-        <Voornaam>Witold</Voornaam>
-        <Voornaam>Frederik</Voornaam>
-        <Achternaam>ten Hove</Achternaam>
-        <Telefoon>06111111</Telefoon>
-        <Telefoon>06222222</Telefoon>
-      </klant>
-      <klant>
-        <Voornaam>Caroline</Voornaam>
-        <Voornaam>Egbertine</Voornaam>
-        <Achternaam>Tensen</Achternaam>
-        <Telefoon>06333333</Telefoon>
-      </klant>
-    </klanten>
+    <kavels>
+          <kavel>
+              <nummer>1800</nummer>
+              <omschrijving>Kavel 1800</omschrijving>
+              <goederengroep>Voertuigen en onderdelen</goederengroep>
+              <verkooptekst>
+                  <verkooptekstregel>1800</verkooptekstregel>
+                  <verkooptekstregel>Motorfiets</verkooptekstregel>
+                  <verkooptekstregel>PIAGGIO</verkooptekstregel>
+                  <verkooptekstregel>Type mp3 500 lt</verkooptekstregel>
+                  <verkooptekstregel>Kenteken 9-XHR-38</verkooptekstregel>
+                  <verkooptekstregel>Afgelezen km-stand 1.802</verkooptekstregel>
+                  <verkooptekstregel>Datum eerste toelating 07.08.2014</verkooptekstregel>
+               </verkooptekst>
+          </kavel>
+          <kavel>
+              <nummer>1801</nummer>
+              <omschrijving>Kavel 1801</omschrijving>
+              <goederengroep>(Brom)fietsen en scooters</goederengroep>
+              <verkooptekst>
+                  <verkooptekstregel>1801</verkooptekstregel>
+                  <verkooptekstregel>Bromfiets</verkooptekstregel>
+                  <verkooptekstregel>PEUGEOT</verkooptekstregel>
+                  <verkooptekstregel>Type vivacity</verkooptekstregel>
+                  <verkooptekstregel>Kenteken F-917-FR</verkooptekstregel>
+                  <verkooptekstregel>Afgelezen km-stand 7.706</verkooptekstregel>
+                  <verkooptekstregel>Datum eerste toelating 29.03.2012</verkooptekstregel>
+              </verkooptekst>
+          </kavel>
+    </kavels>
 ```
 </figure>
 
@@ -179,72 +194,108 @@ De volgende Javascript code toont hoe de eerste twee stappen via [Node.js](https
 <pre class="prettyprint">
     var fs = require('fs');
     var convert = require('xml-js');
-    var xml = require('fs').readFileSync('klanten.xml', 'utf8');
+    var xml = require('fs').readFileSync('kavels.xml', 'utf8');
     var options = {
                     compact: true,
                     ignoreAtrributes: true,
                     ignoreDeclaration: true
                   };
     var result = convert.xml2js(xml, options);
-    var klanten = JSON.stringify(result, null, 2);
+    var kavels = JSON.stringify(result, null, 2);
     
     console.log(JSON.stringify(result, null, 2));
     
-    fs.writeFile('klanten.json', klanten, 'utf8', function(err){
+    fs.writeFile('kavels.json', kavels, 'utf8', function(err){
             if(err){
                   console.log(err);
             } else {
                   console.log('Everything went OK!');
             }
     });
+
 </pre>
 </figure>
 
 <figure>
-  <figcaption>klanten.json</figcaption>
+  <figcaption>kavels.json</figcaption>
 ```json
-  {
-    "klanten": {
-      "klant": [
-        {
-          "Voornaam": [
-            {
-              "_text": "Witold"
+    {
+      "kavels": {
+        "kavel": [
+          {
+            "nummer": {
+              "_text": "1800"
             },
-            {
-              "_text": "Frederik"
+            "omschrijving": {
+              "_text": "Kavel 1800"
+            },
+            "goederengroep": {
+              "_text": "Voertuigen en onderdelen"
+            },
+            "verkooptekst": {
+              "verkooptekstregel": [
+                {
+                  "_text": "1800"
+                },
+                {
+                  "_text": "Motorfiets"
+                },
+                {
+                  "_text": "PIAGGIO"
+                },
+                {
+                  "_text": "Type mp3 500 lt"
+                },
+                {
+                  "_text": "Kenteken 9-XHR-38"
+                },
+                {
+                  "_text": "Afgelezen km-stand 1.802"
+                },
+                {
+                  "_text": "Datum eerste toelating 07.08.2014"
+                }
+              ]
             }
-          ],
-          "Achternaam": {
-            "_text": "ten Hove"
           },
-          "Telefoon": [
-            {
-              "_text": "06111111"
+          {
+            "nummer": {
+              "_text": "1801"
             },
-            {
-              "_text": "06222222"
-            }
-          ]
-        },
-        {
-          "Voornaam": [
-            {
-              "_text": "Caroline"
+            "omschrijving": {
+              "_text": "Kavel 1801"
             },
-            {
-              "_text": "Egbertine"
+            "goederengroep": {
+              "_text": "(Brom)fietsen en scooters"
+            },
+            "verkooptekst": {
+              "verkooptekstregel": [
+                {
+                  "_text": "1801"
+                },
+                {
+                  "_text": "Bromfiets"
+                },
+                {
+                  "_text": "PEUGEOT"
+                },
+                {
+                  "_text": "Type vivacity"
+                },
+                {
+                  "_text": "Kenteken F-917-FR"
+                },
+                {
+                  "_text": "Afgelezen km-stand 7.706"
+                },
+                {
+                  "_text": "Datum eerste toelating 29.03.2012"
+                }
+              ]
             }
-          ],
-          "Achternaam": {
-            "_text": "Tensen"
-          },
-          "Telefoon": {
-            "_text": "06333333"
           }
-        }
-      ]
+        ]
+      }
     }
-  }
 ```
 </figure>

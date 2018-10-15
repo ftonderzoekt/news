@@ -1,0 +1,78 @@
+{
+  "kavels": {
+    "kavel": [
+      {
+        "nummer": {
+          "_text": "1800"
+        },
+        "omschrijving": {
+          "_text": "Kavel 1800"
+        },
+        "goederengroep": {
+          "_text": "Voertuigen en onderdelen"
+        },
+        "verkooptekst": {
+          "verkooptekstregel": [
+            {
+              "_text": "1800"
+            },
+            {
+              "_text": "Motorfiets"
+            },
+            {
+              "_text": "PIAGGIO"
+            },
+            {
+              "_text": "Type mp3 500 lt"
+            },
+            {
+              "_text": "Kenteken 9-XHR-38"
+            },
+            {
+              "_text": "Afgelezen km-stand 1.802"
+            },
+            {
+              "_text": "Datum eerste toelating 07.08.2014"
+            }
+          ]
+        }
+      },
+      {
+        "nummer": {
+          "_text": "1801"
+        },
+        "omschrijving": {
+          "_text": "Kavel 1801"
+        },
+        "goederengroep": {
+          "_text": "(Brom)fietsen en scooters"
+        },
+        "verkooptekst": {
+          "verkooptekstregel": [
+            {
+              "_text": "1801"
+            },
+            {
+              "_text": "Bromfiets"
+            },
+            {
+              "_text": "PEUGEOT"
+            },
+            {
+              "_text": "Type vivacity"
+            },
+            {
+              "_text": "Kenteken F-917-FR"
+            },
+            {
+              "_text": "Afgelezen km-stand 7.706"
+            },
+            {
+              "_text": "Datum eerste toelating 29.03.2012"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

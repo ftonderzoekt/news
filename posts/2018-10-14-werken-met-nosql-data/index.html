@@ -1466,26 +1466,41 @@ Bron: <a href="https://insights.stackoverflow.com/trends?tags=json%2Cxml" target
 <h3 id="xml-naar-json">XML naar JSON</h3>
 <figure>
 <figcaption>
-klanten.xml
+kavels.xml
 </figcaption>
 <pre class="xml"><code>
     &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
     
-    &lt;klanten&gt;
-      &lt;klant&gt;
-        &lt;Voornaam&gt;Witold&lt;/Voornaam&gt;
-        &lt;Voornaam&gt;Frederik&lt;/Voornaam&gt;
-        &lt;Achternaam&gt;ten Hove&lt;/Achternaam&gt;
-        &lt;Telefoon&gt;06111111&lt;/Telefoon&gt;
-        &lt;Telefoon&gt;06222222&lt;/Telefoon&gt;
-      &lt;/klant&gt;
-      &lt;klant&gt;
-        &lt;Voornaam&gt;Caroline&lt;/Voornaam&gt;
-        &lt;Voornaam&gt;Egbertine&lt;/Voornaam&gt;
-        &lt;Achternaam&gt;Tensen&lt;/Achternaam&gt;
-        &lt;Telefoon&gt;06333333&lt;/Telefoon&gt;
-      &lt;/klant&gt;
-    &lt;/klanten&gt;</code></pre>
+    &lt;kavels&gt;
+          &lt;kavel&gt;
+              &lt;nummer&gt;1800&lt;/nummer&gt;
+              &lt;omschrijving&gt;Kavel 1800&lt;/omschrijving&gt;
+              &lt;goederengroep&gt;Voertuigen en onderdelen&lt;/goederengroep&gt;
+              &lt;verkooptekst&gt;
+                  &lt;verkooptekstregel&gt;1800&lt;/verkooptekstregel&gt;
+                  &lt;verkooptekstregel&gt;Motorfiets&lt;/verkooptekstregel&gt;
+                  &lt;verkooptekstregel&gt;PIAGGIO&lt;/verkooptekstregel&gt;
+                  &lt;verkooptekstregel&gt;Type mp3 500 lt&lt;/verkooptekstregel&gt;
+                  &lt;verkooptekstregel&gt;Kenteken 9-XHR-38&lt;/verkooptekstregel&gt;
+                  &lt;verkooptekstregel&gt;Afgelezen km-stand 1.802&lt;/verkooptekstregel&gt;
+                  &lt;verkooptekstregel&gt;Datum eerste toelating 07.08.2014&lt;/verkooptekstregel&gt;
+               &lt;/verkooptekst&gt;
+          &lt;/kavel&gt;
+          &lt;kavel&gt;
+              &lt;nummer&gt;1801&lt;/nummer&gt;
+              &lt;omschrijving&gt;Kavel 1801&lt;/omschrijving&gt;
+              &lt;goederengroep&gt;(Brom)fietsen en scooters&lt;/goederengroep&gt;
+              &lt;verkooptekst&gt;
+                  &lt;verkooptekstregel&gt;1801&lt;/verkooptekstregel&gt;
+                  &lt;verkooptekstregel&gt;Bromfiets&lt;/verkooptekstregel&gt;
+                  &lt;verkooptekstregel&gt;PEUGEOT&lt;/verkooptekstregel&gt;
+                  &lt;verkooptekstregel&gt;Type vivacity&lt;/verkooptekstregel&gt;
+                  &lt;verkooptekstregel&gt;Kenteken F-917-FR&lt;/verkooptekstregel&gt;
+                  &lt;verkooptekstregel&gt;Afgelezen km-stand 7.706&lt;/verkooptekstregel&gt;
+                  &lt;verkooptekstregel&gt;Datum eerste toelating 29.03.2012&lt;/verkooptekstregel&gt;
+              &lt;/verkooptekst&gt;
+          &lt;/kavel&gt;
+    &lt;/kavels&gt;</code></pre>
 </figure>
 <figure>
 <figcaption>
@@ -1495,74 +1510,110 @@ xml2json.js
 <pre class="prettyprint">
     var fs = require('fs');
     var convert = require('xml-js');
-    var xml = require('fs').readFileSync('klanten.xml', 'utf8');
+    var xml = require('fs').readFileSync('kavels.xml', 'utf8');
     var options = {
                     compact: true,
                     ignoreAtrributes: true,
                     ignoreDeclaration: true
                   };
     var result = convert.xml2js(xml, options);
-    var klanten = JSON.stringify(result, null, 2);
+    var kavels = JSON.stringify(result, null, 2);
     
     console.log(JSON.stringify(result, null, 2));
     
-    fs.writeFile('klanten.json', klanten, 'utf8', function(err){
+    fs.writeFile('kavels.json', kavels, 'utf8', function(err){
             if(err){
                   console.log(err);
             } else {
                   console.log('Everything went OK!');
             }
     });
+
 </pre>
 </figure>
 <figure>
 <figcaption>
-klanten.json
+kavels.json
 </figcaption>
 <pre class="json"><code>
-  {
-    &quot;klanten&quot;: {
-      &quot;klant&quot;: [
-        {
-          &quot;Voornaam&quot;: [
-            {
-              &quot;_text&quot;: &quot;Witold&quot;
+    {
+      &quot;kavels&quot;: {
+        &quot;kavel&quot;: [
+          {
+            &quot;nummer&quot;: {
+              &quot;_text&quot;: &quot;1800&quot;
             },
-            {
-              &quot;_text&quot;: &quot;Frederik&quot;
+            &quot;omschrijving&quot;: {
+              &quot;_text&quot;: &quot;Kavel 1800&quot;
+            },
+            &quot;goederengroep&quot;: {
+              &quot;_text&quot;: &quot;Voertuigen en onderdelen&quot;
+            },
+            &quot;verkooptekst&quot;: {
+              &quot;verkooptekstregel&quot;: [
+                {
+                  &quot;_text&quot;: &quot;1800&quot;
+                },
+                {
+                  &quot;_text&quot;: &quot;Motorfiets&quot;
+                },
+                {
+                  &quot;_text&quot;: &quot;PIAGGIO&quot;
+                },
+                {
+                  &quot;_text&quot;: &quot;Type mp3 500 lt&quot;
+                },
+                {
+                  &quot;_text&quot;: &quot;Kenteken 9-XHR-38&quot;
+                },
+                {
+                  &quot;_text&quot;: &quot;Afgelezen km-stand 1.802&quot;
+                },
+                {
+                  &quot;_text&quot;: &quot;Datum eerste toelating 07.08.2014&quot;
+                }
+              ]
             }
-          ],
-          &quot;Achternaam&quot;: {
-            &quot;_text&quot;: &quot;ten Hove&quot;
           },
-          &quot;Telefoon&quot;: [
-            {
-              &quot;_text&quot;: &quot;06111111&quot;
+          {
+            &quot;nummer&quot;: {
+              &quot;_text&quot;: &quot;1801&quot;
             },
-            {
-              &quot;_text&quot;: &quot;06222222&quot;
-            }
-          ]
-        },
-        {
-          &quot;Voornaam&quot;: [
-            {
-              &quot;_text&quot;: &quot;Caroline&quot;
+            &quot;omschrijving&quot;: {
+              &quot;_text&quot;: &quot;Kavel 1801&quot;
             },
-            {
-              &quot;_text&quot;: &quot;Egbertine&quot;
+            &quot;goederengroep&quot;: {
+              &quot;_text&quot;: &quot;(Brom)fietsen en scooters&quot;
+            },
+            &quot;verkooptekst&quot;: {
+              &quot;verkooptekstregel&quot;: [
+                {
+                  &quot;_text&quot;: &quot;1801&quot;
+                },
+                {
+                  &quot;_text&quot;: &quot;Bromfiets&quot;
+                },
+                {
+                  &quot;_text&quot;: &quot;PEUGEOT&quot;
+                },
+                {
+                  &quot;_text&quot;: &quot;Type vivacity&quot;
+                },
+                {
+                  &quot;_text&quot;: &quot;Kenteken F-917-FR&quot;
+                },
+                {
+                  &quot;_text&quot;: &quot;Afgelezen km-stand 7.706&quot;
+                },
+                {
+                  &quot;_text&quot;: &quot;Datum eerste toelating 29.03.2012&quot;
+                }
+              ]
             }
-          ],
-          &quot;Achternaam&quot;: {
-            &quot;_text&quot;: &quot;Tensen&quot;
-          },
-          &quot;Telefoon&quot;: {
-            &quot;_text&quot;: &quot;06333333&quot;
           }
-        }
-      ]
-    }
-  }</code></pre>
+        ]
+      }
+    }</code></pre>
 </figure>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

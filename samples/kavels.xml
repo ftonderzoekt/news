@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<kavels>
+      <kavel>
+          <nummer>1800</nummer>
+          <omschrijving>Kavel 1800</omschrijving>
+          <goederengroep>Voertuigen en onderdelen</goederengroep>
+          <verkooptekst>
+              <verkooptekstregel>1800</verkooptekstregel>
+              <verkooptekstregel>Motorfiets</verkooptekstregel>
+              <verkooptekstregel>PIAGGIO</verkooptekstregel>
+              <verkooptekstregel>Type mp3 500 lt</verkooptekstregel>
+              <verkooptekstregel>Kenteken 9-XHR-38</verkooptekstregel>
+              <verkooptekstregel>Afgelezen km-stand 1.802</verkooptekstregel>
+              <verkooptekstregel>Datum eerste toelating 07.08.2014</verkooptekstregel>
+           </verkooptekst>
+      </kavel>
+      <kavel>
+          <nummer>1801</nummer>
+          <omschrijving>Kavel 1801</omschrijving>
+          <goederengroep>(Brom)fietsen en scooters</goederengroep>
+          <verkooptekst>
+              <verkooptekstregel>1801</verkooptekstregel>
+              <verkooptekstregel>Bromfiets</verkooptekstregel>
+              <verkooptekstregel>PEUGEOT</verkooptekstregel>
+              <verkooptekstregel>Type vivacity</verkooptekstregel>
+              <verkooptekstregel>Kenteken F-917-FR</verkooptekstregel>
+              <verkooptekstregel>Afgelezen km-stand 7.706</verkooptekstregel>
+              <verkooptekstregel>Datum eerste toelating 29.03.2012</verkooptekstregel>
+          </verkooptekst>
+      </kavel>
+</kavels>
