@@ -126,7 +126,7 @@ klantJSON
 ```
 
 
-Als een waarde (value) uit meerdere elementen bestaat, worden ze in een reeksen (arrays) opgeslagen.
+Als een waarde (value) uit meerdere elementen bestaat, worden ze in reeksen (arrays) opgeslagen.
 
 ```{r}
 voorList <- list(c("Witold", "Frederik"), c("Caroline", "Egbertine"))
@@ -141,7 +141,7 @@ De reeksen zijn geindexeerd en zo kan ieder element makkelijk worden opgehaald.
 
 ## Casus: Van XML naar JSON naar MongoDB
 
-In deze casus beschrijven we een organisatie die voor haar webdiensten gebruikt maakt van publieke data. Deze data wordt als XML aangeboden op websites van verschillende overheden. De organisatie wil deze data doorzoekbaar maken voor haar klanten en als API ter beschikking stellen. De workflow betaat uit drie stappen:
+In deze casus beschrijven we een organisatie die voor haar webdiensten gebruik maakt van publieke data. Deze data wordt als XML aangeboden op websites van verschillende overheden. De organisatie wil deze data doorzoekbaar maken voor haar klanten en als API ter beschikking stellen. De workflow betaat uit drie stappen:
 
 1. De XML-data moet worden omgezet naar JSON
 2. De JSON-data moet worden ingelezen in een NoSQL database
@@ -151,7 +151,7 @@ De volgende Javascript code toont hoe de eerste stap via [Node.js](https://nodej
 
 ### XML naar JSON
 
-We gaan uit van het volgende XML-bestand. Dit is een fragment van een bestaand document dat door de overheid online beschikbaar wordt gesteld als open data.
+We gaan uit van het volgende XML-bestand. Dit is een fragment uit een bestaand document dat door de overheid online beschikbaar wordt gesteld als open data.
 
 <figure>
   <figcaption>kavels.xml</figcaption>
@@ -211,7 +211,7 @@ figure>
 </figure>
 <br>
 
-Nu hebben we alle onderdelen om het script te bouwen. De afzonderlijke stappen zijn worden in de comments beschreven.
+Nu hebben we alle onderdelen om het script te bouwen. De afzonderlijke stappen worden in de comments beschreven.
 
 <figure>
   <figcaption>xml2json.js</figcaption>
@@ -246,7 +246,7 @@ Nu hebben we alle onderdelen om het script te bouwen. De afzonderlijke stappen z
 </pre>
 </figure>
 
-Het script genereert in de eigen folder een nieuw bestand met de json data.
+Het script genereert in de eigen folder een nieuw bestand met de JSON-data.
 
 <figure>
   <figcaption>kavels.json</figcaption>

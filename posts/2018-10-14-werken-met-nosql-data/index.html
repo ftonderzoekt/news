@@ -1451,7 +1451,7 @@ Bron: <a href="https://insights.stackoverflow.com/trends?tags=json%2Cxml" target
   }
 ] </code></pre>
 </div>
-<p>Als een waarde (value) uit meerdere elementen bestaat, worden ze in een reeksen (arrays) opgeslagen.</p>
+<p>Als een waarde (value) uit meerdere elementen bestaat, worden ze in reeksen (arrays) opgeslagen.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre><code>
 [
@@ -1469,7 +1469,7 @@ Bron: <a href="https://insights.stackoverflow.com/trends?tags=json%2Cxml" target
 </div>
 <p>De reeksen zijn geindexeerd en zo kan ieder element makkelijk worden opgehaald.</p>
 <h2 id="casus-van-xml-naar-json-naar-mongodb">Casus: Van XML naar JSON naar MongoDB</h2>
-<p>In deze casus beschrijven we een organisatie die voor haar webdiensten gebruikt maakt van publieke data. Deze data wordt als XML aangeboden op websites van verschillende overheden. De organisatie wil deze data doorzoekbaar maken voor haar klanten en als API ter beschikking stellen. De workflow betaat uit drie stappen:</p>
+<p>In deze casus beschrijven we een organisatie die voor haar webdiensten gebruik maakt van publieke data. Deze data wordt als XML aangeboden op websites van verschillende overheden. De organisatie wil deze data doorzoekbaar maken voor haar klanten en als API ter beschikking stellen. De workflow betaat uit drie stappen:</p>
 <ol type="1">
 <li>De XML-data moet worden omgezet naar JSON</li>
 <li>De JSON-data moet worden ingelezen in een NoSQL database</li>
@@ -1477,7 +1477,7 @@ Bron: <a href="https://insights.stackoverflow.com/trends?tags=json%2Cxml" target
 </ol>
 <p>De volgende Javascript code toont hoe de eerste stap via <a href="https://nodejs.org/en/">Node.js</a> (server side) kan worden uitgevoerd. De overige stappen zullen in een volgend artikel worden toegelicht.</p>
 <h3 id="xml-naar-json">XML naar JSON</h3>
-<p>We gaan uit van het volgende XML-bestand. Dit is een fragment van een bestaand document dat door de overheid online beschikbaar wordt gesteld als open data.</p>
+<p>We gaan uit van het volgende XML-bestand. Dit is een fragment uit een bestaand document dat door de overheid online beschikbaar wordt gesteld als open data.</p>
 <figure>
 <figcaption>
 kavels.xml
@@ -1532,7 +1532,7 @@ Shell commando met node
 </figcaption>
 </figure>
 <p><br></p>
-<p>Nu hebben we alle onderdelen om het script te bouwen. De afzonderlijke stappen zijn worden in de comments beschreven.</p>
+<p>Nu hebben we alle onderdelen om het script te bouwen. De afzonderlijke stappen worden in de comments beschreven.</p>
 <figure>
 <figcaption>
 xml2json.js
@@ -1566,7 +1566,7 @@ xml2json.js
 
 </pre>
 </figure>
-<p>Het script genereert in de eigen folder een nieuw bestand met de json data.</p>
+<p>Het script genereert in de eigen folder een nieuw bestand met de JSON-data.</p>
 <figure>
 <figcaption>
 kavels.json
