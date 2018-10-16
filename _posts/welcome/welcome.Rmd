@@ -3,10 +3,10 @@ title: "Welkom bij FTOnderzoekt Big Data"
 description: |
   FTOnderzoekt Big Data verkent de mogelijkheden van Big Data voor het MKB.
 author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
+  - name: "Witek ten Hove"
+    url: https://github.com/witusj
+    affiliation: HAN University of Applied Sciences
+    affiliation_url: https://www.han.nl
 date: 2018-10-13
 creative_commons: CC BY
 output:

@@ -5,7 +5,11 @@ description: |
 ---
 
 ## Witek ten Hove
+Ik hou me graag bezig met vraagstukken op het gebied van data- en webtechnologieën. Mijn belangrijkste tools hiervoor zijn [R](https://www.rstudio.com/) en [JavaScript](https://www.w3schools.com/js/default.asp). Mijn focus ligt momenteel op het verdiepen van mijn skills op het gebied van [Node.js](https://nodejs.org/en/), [React](https://reactjs.org/) en NoSQL databases ([MongoDB](https://www.mongodb.com/) en [Google Firebase](https://firebase.google.com/)).
 
+Ik heb bovendien het sterke vermoeden dat JavaScript zich naast Python en R zal gaan ontwikkelen tot een belangrijke taal voor Data Science. Aan die ontwikkeling wil ik actief deelnemen.
+
+Overigens ben ik een enthousiaste supporter van de Open Source community. Al mijn werk mag daarom vrij worden gebruikt onder een [CC BY](https://creativecommons.org/licenses/by/4.0/) licentie en is beschikbaar via [Github](https://github.com/witusj).
 
 ## Humera Saeed
 
