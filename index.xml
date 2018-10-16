@@ -7,14 +7,14 @@
     <description>FTOnderzoekt Big Data
 </description>
     <generator>Radix</generator>
-    <lastBuildDate>Sun, 14 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 13 Oct 2018 00:00:00 +0000</lastBuildDate>
     <item>
       <title>Werken met NoSQL data</title>
       <dc:creator>Witek ten Hove</dc:creator>
       <link>https://ftonderzoekt.github.io/news/posts/2018-10-14-werken-met-nosql-data</link>
       <description>Meer flexibiliteit door asymmetrische data-opslag.</description>
       <guid>https://ftonderzoekt.github.io/news/posts/2018-10-14-werken-met-nosql-data</guid>
-      <pubDate>Sun, 14 Oct 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 13 Oct 2018 00:00:00 +0000</pubDate>
       <media:content url="https://ftonderzoekt.github.io/news/posts/2018-10-14-werken-met-nosql-data/jsonxml.svg" medium="image" type="image/svg+xml"/>
     </item>
     <item>
@@ -23,7 +23,7 @@
       <link>https://ftonderzoekt.github.io/news/posts/welcome</link>
       <description>FTOnderzoekt Big Data verkent de mogelijkheden van Big Data voor het MKB.</description>
       <guid>https://ftonderzoekt.github.io/news/posts/welcome</guid>
-      <pubDate>Fri, 12 Oct 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 13 Oct 2018 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
