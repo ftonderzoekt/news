@@ -50,7 +50,7 @@
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["jsonxml.svg","werken-met-nosql-data_files/bowser-1.9.3/bowser.min.js","werken-met-nosql-data_files/distill-2.2.21/template.v2.js","werken-met-nosql-data_files/jquery-1.11.3/jquery.min.js","werken-met-nosql-data_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["jsonxml.svg","node.png","npm.png","werken-met-nosql-data_files/bowser-1.9.3/bowser.min.js","werken-met-nosql-data_files/distill-2.2.21/template.v2.js","werken-met-nosql-data_files/jquery-1.11.3/jquery.min.js","werken-met-nosql-data_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -935,7 +935,7 @@
 
 <div class="d-article">
 <p><em> De datarevolutie wordt niet alleen bepaald door de hoeveelheid data die wordt gegenereerd, maar ook door innovatieve systemen om data op te slaan. Traditionele structuren waar data in tabellen wordt opgeslagen, worden nog steeds gebruikt en hebben hun toepassing. Applicaties die voor web en mobiel worden ontwikkeld, hebben echter een structuur nodig die het wegschrijven en opzoeken van data eenvoudiger en sneller maakt. </em></p>
-<p>In dit artikel bespreek ik wanner voor asymmetrische datastructuren (NoSQL) gekozen wordt. Daarna beschrijf ik de twee meest voorkomende standaarden: XML en JSON. Het artikel eindigt met een illustratie van een workflow waarbij XML data wordt omgezet naar JSON en de data uiteindelijk bewaard wordt in MongoDB.</p>
+<p>In dit artikel bespreek ik wanneer het beste voor asymmetrische datastructuren (NoSQL) gekozen kan worden. Daarna beschrijf ik de twee meest voorkomende standaarden: XML en JSON. Het artikel eindigt met een illustratie van een workflow waarbij XML data wordt omgezet naar JSON.</p>
 <h2 id="nosql">NoSQL</h2>
 <p>Als u met Excel werkt of uw data bewaart in MySQL bent u gewend om data op te slaan in rijen en kolommen. Bijvoorbeeld als u klantgegevens opslaat:</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -1072,8 +1072,9 @@ Bron: <a href="https://insights.stackoverflow.com/trends?tags=json%2Cxml" target
 <li>De JSON-data moet worden ingelezen in een NoSQL database</li>
 <li>De data uit de database kan via een API worden geraadpleegd</li>
 </ol>
-<p>De volgende Javascript code toont hoe de eerste twee stappen via <a href="https://nodejs.org/en/">Node.js</a> (server side) kan worden uitgevoerd. Voor de laatste stap zal in een apart artikel worden toegelicht.</p>
+<p>De volgende Javascript code toont hoe de eerste stap via <a href="https://nodejs.org/en/">Node.js</a> (server side) kan worden uitgevoerd. De overige stappen zullen in een volgend artikel worden toegelicht.</p>
 <h3 id="xml-naar-json">XML naar JSON</h3>
+<p>We gaan uit van het volgende XML-bestand. Dit is een fragment van een bestaand document dat door de overheid online beschikbaar wordt gesteld als open data.</p>
 <figure>
 <figcaption>
 kavels.xml
@@ -1112,15 +1113,36 @@ kavels.xml
           &lt;/kavel&gt;
     &lt;/kavels&gt;</code></pre>
 </figure>
+<p>We willen dit bestand regelmatig downloaden en in een eigen database verwerken. Deze database kan daarna door een app worden benaderd via een API. Dit kan een eigen app zijn of een applicatie die door derden is ontwikkeld.</p>
+<p>Voor de eerste stap, van XML naar JSON, bouwen we een script in Javascript dat op een server wordt uitgevoerd. In dit voorbeeld heeft het script de naam: <code>xml2json.js</code>.</p>
+<p>Om een JS-script uit te voeren dient u Node.js op uw eigen pc of server te installeren. Daarna kunt u het script runnen door in de folder waar het script wordt bewaard het commando <code>node &lt;scriptnaam&gt;</code> uit te voeren (in de shell).</p>
+figure&gt; <img src='node.png' alt='shell node' width=100% />
+<figcaption>
+Shell commando met node
+</figcaption>
+</figure>
+<p><br></p>
+<p>Door Node.js te gebruiken, krijgen we toegang tot een enorme bibliotheek van handige functies. Deze functies zijn verzameld in zogenaamde packages. In dit geval gebruiken we de package <code>xml-js</code>. De package kan geïnstalleerd worden via het commando <code>npm install xml-js</code>. NPM - Node Package Manager is onderdeel van de Node.js installatie.</p>
+figure&gt; <img src='npm.png' alt='shell node' width=100% />
+<figcaption>
+Shell commando met node
+</figcaption>
+</figure>
+<p><br></p>
+<p>Nu hebben we alle onderdelen om het script te bouwen. De afzonderlijke stappen zijn worden in de comments beschreven.</p>
 <figure>
 <figcaption>
 xml2json.js
 </figcaption>
-</pre>
 <pre class="prettyprint">
+    // Laad de benodigde packages
     var fs = require('fs');
     var convert = require('xml-js');
+    
+    // Lees de XML-data in
     var xml = require('fs').readFileSync('kavels.xml', 'utf8');
+    
+    // Transformeer data naar JSON
     var options = {
                     compact: true,
                     ignoreAtrributes: true,
@@ -1128,9 +1150,9 @@ xml2json.js
                   };
     var result = convert.xml2js(xml, options);
     var kavels = JSON.stringify(result, null, 2);
+    console.log(JSON.stringify(result, null, 2)); // Controle
     
-    console.log(JSON.stringify(result, null, 2));
-    
+    // Schrijf de data weg in een JSON-bestand
     fs.writeFile('kavels.json', kavels, 'utf8', function(err){
             if(err){
                   console.log(err);
@@ -1141,6 +1163,7 @@ xml2json.js
 
 </pre>
 </figure>
+<p>Het script genereert in de eigen folder een nieuw bestand met de json data.</p>
 <figure>
 <figcaption>
 kavels.json
@@ -1225,6 +1248,7 @@ kavels.json
       }
     }</code></pre>
 </figure>
+<p>JSON data kan direct worden ingelezen in de meest gangbare NoSQL databases. In een volgend artikel beschrijf ik de workflow voor MongoDB en Google Firebase.</p>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
