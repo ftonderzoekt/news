@@ -3,8 +3,10 @@ title: "Werken met NoSQL data"
 description: |
   Meer flexibiliteit door asymmetrische data-opslag.
 author:
-  - name: Witek ten Hove
-    url: {}
+  - name: "Witek ten Hove"
+    url: https://github.com/witusj
+    affiliation: HAN University of Applied Sciences
+    affiliation_url: https://www.han.nl
 date: 2018-10-14
 preview: jsonxml.svg
 creative_commons: CC BY

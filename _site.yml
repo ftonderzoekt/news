@@ -3,6 +3,7 @@ title: "FT_Onderzoekt >> Big Data"
 description: |
   FTOnderzoekt Big Data
 output_dir: "."
+base_url: https://ftonderzoekt.github.io/news/
 navbar:
   right:
     - text: "Start"
