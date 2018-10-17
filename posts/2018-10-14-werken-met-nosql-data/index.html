@@ -1519,19 +1519,19 @@ kavels.xml
 <p>We willen dit bestand regelmatig downloaden en in een eigen database verwerken. Deze database kan daarna door een app worden benaderd via een API. Dit kan een eigen app zijn of een applicatie die door derden is ontwikkeld.</p>
 <p>Voor de eerste stap, van XML naar JSON, bouwen we een script in Javascript dat op een server wordt uitgevoerd. In dit voorbeeld heeft het script de naam: <code>xml2json.js</code>.</p>
 <p>Om een JS-script uit te voeren dient u Node.js op uw eigen pc of server te installeren. Daarna kunt u het script runnen door in de folder waar het script wordt bewaard het commando <code>node &lt;scriptnaam&gt;</code> uit te voeren (in de shell).</p>
-figure&gt; <img src='node.png' alt='shell node' width=100% />
+<figure>
+<img src='node.png' alt='shell node' width=100% />
 <figcaption>
 Shell commando met node
 </figcaption>
 </figure>
-<p><br></p>
-<p>Door Node.js te gebruiken, krijgen we toegang tot een enorme bibliotheek van handige functies. Deze functies zijn verzameld in zogenaamde packages. In dit geval gebruiken we de package <code>xml-js</code>. De package kan geïnstalleerd worden via het commando <code>npm install xml-js</code>. NPM - Node Package Manager is onderdeel van de Node.js installatie.</p>
-figure&gt; <img src='npm.png' alt='shell node' width=100% />
+<p>Door Node.js te gebruiken, krijgen we toegang tot een enorme bibliotheek van handige functies. Deze functies zijn verzameld in zogenaamde packages. In dit geval gebruiken we de package <code>xml-js</code>. De package kan geïnstalleerd worden via het commando <code>npm install xml-js</code>. NPM - Node Package Manager - is onderdeel van de Node.js installatie.</p>
+<figure>
+<img src='npm.png' alt='shell node' width=100% />
 <figcaption>
-Shell commando met node
+Shell commando met npm
 </figcaption>
 </figure>
-<p><br></p>
 <p>Nu hebben we alle onderdelen om het script te bouwen. De afzonderlijke stappen worden in de comments beschreven.</p>
 <figure>
 <figcaption>
@@ -1553,7 +1553,7 @@ xml2json.js
                   };
     var result = convert.xml2js(xml, options);
     var kavels = JSON.stringify(result, null, 2);
-    console.log(JSON.stringify(result, null, 2)); // Controle
+    console.log(kavels); // Controle
     
     // Schrijf de data weg in een JSON-bestand
     fs.writeFile('kavels.json', kavels, 'utf8', function(err){

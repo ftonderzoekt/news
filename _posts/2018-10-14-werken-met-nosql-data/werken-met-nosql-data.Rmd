@@ -197,19 +197,17 @@ Voor de eerste stap, van XML naar JSON, bouwen we een script in Javascript dat o
 
 Om een JS-script uit te voeren dient u Node.js op uw eigen pc of server te installeren. Daarna kunt u het script runnen door in de folder waar het script wordt bewaard het commando ` node <scriptnaam> ` uit te voeren (in de shell).
 
-figure>
+<figure>
     <img src='node.png' alt='shell node' width=100% />
     <figcaption>Shell commando met node</figcaption>
 </figure>
-<br>
 
-Door Node.js te gebruiken, krijgen we toegang tot een enorme bibliotheek van handige functies. Deze functies zijn verzameld in zogenaamde packages. In dit geval gebruiken we de package `xml-js`. De package kan geïnstalleerd worden via het commando `npm install xml-js`. NPM - Node Package Manager is onderdeel van de Node.js installatie.
+Door Node.js te gebruiken, krijgen we toegang tot een enorme bibliotheek van handige functies. Deze functies zijn verzameld in zogenaamde packages. In dit geval gebruiken we de package `xml-js`. De package kan geïnstalleerd worden via het commando `npm install xml-js`. NPM - Node Package Manager - is onderdeel van de Node.js installatie.
 
-figure>
+<figure>
     <img src='npm.png' alt='shell node' width=100% />
-    <figcaption>Shell commando met node</figcaption>
+    <figcaption>Shell commando met npm</figcaption>
 </figure>
-<br>
 
 Nu hebben we alle onderdelen om het script te bouwen. De afzonderlijke stappen worden in de comments beschreven.
 
@@ -232,7 +230,7 @@ Nu hebben we alle onderdelen om het script te bouwen. De afzonderlijke stappen w
                   };
     var result = convert.xml2js(xml, options);
     var kavels = JSON.stringify(result, null, 2);
-    console.log(JSON.stringify(result, null, 2)); // Controle
+    console.log(kavels); // Controle
     
     // Schrijf de data weg in een JSON-bestand
     fs.writeFile('kavels.json', kavels, 'utf8', function(err){

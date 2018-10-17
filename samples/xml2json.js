@@ -13,7 +13,7 @@ var options = {
               };
 var result = convert.xml2js(xml, options);
 var kavels = JSON.stringify(result, null, 2);
-console.log(JSON.stringify(result, null, 2)); // Controle
+console.log(kavels); // Controle
 
 // Schrijf de data weg in een JSON-bestand
 fs.writeFile('kavels.json', kavels, 'utf8', function(err){
