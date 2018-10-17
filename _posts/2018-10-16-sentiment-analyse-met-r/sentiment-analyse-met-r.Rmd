@@ -7,7 +7,7 @@ author:
     url: https://github.com/witusj
     affiliation: HAN University of Applied Sciences
     affiliation_url: https://www.han.nl
-date: 10-16-2018
+date: 2018-10-16
 preview: sent.png
 output:
   radix::radix_article:
