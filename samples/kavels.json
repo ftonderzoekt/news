@@ -3,7 +3,7 @@
     "kavel": [
       {
         "nummer": {
-          "_text": "1800"
+          "_text": 1800
         },
         "omschrijving": {
           "_text": "Kavel 1800"
@@ -14,7 +14,7 @@
         "verkooptekst": {
           "verkooptekstregel": [
             {
-              "_text": "1800"
+              "_text": 1800
             },
             {
               "_text": "Motorfiets"
@@ -39,7 +39,7 @@
       },
       {
         "nummer": {
-          "_text": "1801"
+          "_text": 1801
         },
         "omschrijving": {
           "_text": "Kavel 1801"
@@ -50,7 +50,7 @@
         "verkooptekst": {
           "verkooptekstregel": [
             {
-              "_text": "1801"
+              "_text": 1801
             },
             {
               "_text": "Bromfiets"

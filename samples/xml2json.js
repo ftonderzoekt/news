@@ -9,7 +9,8 @@ var xml = require('fs').readFileSync('kavels.xml', 'utf8');
 var options = {
                 compact: true,
                 ignoreAtrributes: true,
-                ignoreDeclaration: true
+                ignoreDeclaration: true,
+                nativeType: true
               };
 var result = convert.xml2js(xml, options);
 var kavels = JSON.stringify(result, null, 2);

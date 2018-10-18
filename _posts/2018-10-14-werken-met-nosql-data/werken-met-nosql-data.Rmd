@@ -139,7 +139,7 @@ klantJSON
 
 De reeksen zijn geindexeerd en zo kan ieder element makkelijk worden opgehaald.
 
-## Casus: Van XML naar JSON naar MongoDB
+## Casus: Van XML naar JSON
 
 In deze casus beschrijven we een organisatie die voor haar webdiensten gebruik maakt van publieke data. Deze data wordt als XML aangeboden op websites van verschillende overheden. De organisatie wil deze data doorzoekbaar maken voor haar klanten en als API ter beschikking stellen. De workflow betaat uit drie stappen:
 
