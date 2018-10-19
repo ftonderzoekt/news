@@ -1,7 +1,7 @@
 name: "news"
-title: "FT_Onderzoekt >> Big Data"
+title: "FT_Onderzoekt>>Big Data"
 description: |
-  FTOnderzoekt Big Data
+  FT_Onderzoekt>>Big Data
 output_dir: "."
 base_url: https://ftonderzoekt.github.io/news/
 navbar:

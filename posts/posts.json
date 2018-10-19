@@ -16,8 +16,8 @@
   },
   {
     "path": "posts/welcome/",
-    "title": "Welkom bij FTOnderzoekt Big Data",
-    "description": "FTOnderzoekt >> Big Data verkent de mogelijkheden van Big Data voor het MKB.",
+    "title": "Welkom bij FT_Onderzoekt>>Big Data",
+    "description": "FT_Onderzoekt>>Big Data verkent de mogelijkheden van Big Data voor het MKB.",
     "author": [
       {
         "name": "Witek ten Hove",
@@ -27,6 +27,6 @@
     "date": "2018-10-13",
     "categories": [],
     "preview": {},
-    "last_modified": "2018-10-16T21:08:08+02:00"
+    "last_modified": "2018-10-19T11:17:11+02:00"
   }
 ]
