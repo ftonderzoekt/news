@@ -89,7 +89,7 @@ Scikit-learn heeft een handige functie om direct een rapportje te genereren dat 
   print(sklearn.metrics.classification_report(y_test,y_pred))
 </pre>
 
-Resultaat:
+Resultaat: 
 
 <pre class="prettyprint">
                precision    recall  f1-score   support
