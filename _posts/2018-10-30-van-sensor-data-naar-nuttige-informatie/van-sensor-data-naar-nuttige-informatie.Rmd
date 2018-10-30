@@ -7,7 +7,7 @@ author:
     url: https://www.linkedin.com/in/jeroen-veen-3244444/?originalSubdomain=nl
     affiliation: HAN University of Applied Sciences
     affiliation_url: https://www.han.nl
-date: 10-30-2018
+date: 30-10-2018
 preview: Figure_2.png
 output:
   radix::radix_article:
