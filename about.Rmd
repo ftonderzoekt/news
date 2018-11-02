@@ -12,6 +12,7 @@ Ik heb bovendien het sterke vermoeden dat JavaScript zich naast Python en R zal 
 Overigens ben ik een enthousiaste supporter van de Open Source community. Al mijn werk mag daarom vrij worden gebruikt onder een [CC BY](https://creativecommons.org/licenses/by/4.0/) licentie en is beschikbaar via [Github](https://github.com/witusj).
 
 ## Humera Saeed
+International Relations Officer voor de Faculteit Economie en Management.
 
 
 ## Jeroen Veen

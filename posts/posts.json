@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2018-11-02-study-abroad-studenten-matchen-aan-universiteiten/",
+    "title": "Study Abroad: studenten matchen aan universiteiten",
+    "description": "Toepassing van het Gale-Shapley algoritme op een onderwijsproces",
+    "author": [
+      {
+        "name": "Humera Saeed",
+        "url": "https://www.linkedin.com/in/humera-saeed-61373591/"
+      }
+    ],
+    "date": "2018-11-02",
+    "categories": [],
+    "preview": "posts/2018-11-02-study-abroad-studenten-matchen-aan-universiteiten/Picture1.png",
+    "last_modified": "2018-11-02T16:09:18+01:00",
+    "preview_width": 725,
+    "preview_height": 424
+  },
+  {
     "path": "posts/2018-10-30-van-sensor-data-naar-nuttige-informatie/",
     "title": "Van sensor data naar nuttige informatie",
     "description": "Signaaldetectie met behulp van Machine Learning",
