@@ -1,7 +1,7 @@
 ---
 title: "Welkom bij FT_Onderzoekt>>Big Data"
 description: |
-  FT_Onderzoekt>>Big Data verkent de mogelijkheden van Big Data voor het MKB.
+  FT_Onderzoekt>>Big Data verkent de mogelijkheden van Big Data voor het MKB
 author:
   - name: "Witek ten Hove"
     url: https://github.com/witusj

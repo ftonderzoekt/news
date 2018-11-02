@@ -1,7 +1,7 @@
 ---
 title: "Werken met NoSQL data"
 description: |
-  Meer flexibiliteit door asymmetrische data-opslag.
+  Meer flexibiliteit door asymmetrische data-opslag
 author:
   - name: "Witek ten Hove"
     url: https://github.com/witusj
