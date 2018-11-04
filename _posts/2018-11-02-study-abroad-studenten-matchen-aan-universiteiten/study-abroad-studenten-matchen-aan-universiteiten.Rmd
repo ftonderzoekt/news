@@ -8,7 +8,7 @@ author:
     affiliation: HAN University of Applied Sciences
     affiliation_url: https://www.han.nl
 date: 2018-11-02
-preview: Picture1.png
+preview: GaleShapley.jpg
 output:
   radix::radix_article:
     self_contained: false
