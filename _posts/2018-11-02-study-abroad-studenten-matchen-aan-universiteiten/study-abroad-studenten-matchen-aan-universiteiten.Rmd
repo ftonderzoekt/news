@@ -45,7 +45,6 @@ Het kan dus voorkomen dat er studenten overblijven die niet gematcht kunnen word
 
 Het algoritme is ook fair & strategy proof. Dit houdt in dat de beste strategie die een student kan volgen, is om zijn ware voorkeuren op te geven en dus niet een betere plaatsing kan krijgen door te liegen op zijn voorkeurslijst. Het is ook een eerlijke methode omdat er geen student s die geplaatst is bij universiteit r een andere universiteit r' liever heeft waar s ook een hogere prioriteit heeft dan alle andere geplaatste studenten bij r'.
 
-We hebben dus zo een stabiele, eerlijke methode gevonden om studenten te matchen aan universiteiten voor Study Abroad. Het gebruikte algoritme is transparanter voor de studenten en maakt minder fouten (er bestaat immers altijd een stabiele oplossing). 
-In onderstaande grafiek is te zien het % studenten die op een bepaalde voorkeur zijn geplaatst.
+We hebben dus zo een stabiele, eerlijke methode gevonden om studenten te matchen aan universiteiten voor Study Abroad. Het gebruikte algoritme is transparanter voor de studenten en maakt minder fouten (er bestaat immers altijd een stabiele oplossing).
 
-![](Picture1.png)
+
