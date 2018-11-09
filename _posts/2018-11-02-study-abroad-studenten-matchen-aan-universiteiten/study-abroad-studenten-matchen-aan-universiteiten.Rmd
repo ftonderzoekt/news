@@ -47,4 +47,6 @@ Het algoritme is ook fair & strategy proof. Dit houdt in dat de beste strategie 
 
 We hebben dus zo een stabiele, eerlijke methode gevonden om studenten te matchen aan universiteiten voor Study Abroad. Het gebruikte algoritme is transparanter voor de studenten en maakt minder fouten (er bestaat immers altijd een stabiele oplossing).
 
+**NB:** voor de software hebben we gebruik gemaakt van Python. Een uitwerking van het oorspronkelijke algoritme kan <a href="https://gist.github.com/joyrexus/9967709" target="_blank"></a>hier worden opgehaald.
+
 
